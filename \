@@ -43,10 +43,8 @@ print(word_list)
 ctr = 0
 for x in word_list:
     position = alphabet.index(x)
-    z = position - shift
 
 print(position)
-print(z)
 #output = "".join(word_list)
 #print(output)
 

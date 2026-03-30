@@ -1,10 +1,34 @@
-def encode_message(user_message, nbr_of_shift):
-    result = "encoded message"
-    print(f"Here's the encoded result: {result}")
+def encode_message(user_message, nbr_of_shift, alphabet):
+    user_message_list = list(user_message)
+    ctr = 0
+    for x in user_message_list:
+        position = alphabet.index(x)
+        z = position + nbr_of_shift
+        if z > len(alphabet)-1:
+            z = z % len(alphabet)
+            user_message_list[ctr] = alphabet[z]
+        else:
+            user_message_list[ctr] = alphabet[z]
+        ctr += 1
 
-def decode_message(user_message, nbr_of_shift):
-    result = "decoded message"
-    print(f"Here's the encoded result: {result}")
+    output = "".join(user_message_list)
+    print(f"Here's the encoded result: {output}")
+
+def decode_message(user_message, nbr_of_shift, alphabet):
+    user_message_list = list(user_message)
+    ctr = 0
+    for x in user_message_list:
+        position = alphabet.index(x)
+        z = position - nbr_of_shift
+        if z > len(alphabet)-1:
+            z = z % len(alphabet)
+            user_message_list[ctr] = alphabet[z]
+        else:
+            user_message_list[ctr] = alphabet[z]
+        ctr += 1
+
+    output = "".join(user_message_list)
+    print(f"Here's the decoded result: {output}")
 
 def go_again():
     while True:
@@ -28,10 +52,12 @@ while session:
         if user_choice == "encode":
             encode_message(user_message = user_message,
                            nbr_of_shift = shift_nbr,
+                           alphabet = alphabet
                            )
         else:
             decode_message(user_message = user_message,
-                           nbr_of_shift = shift_nbr
+                           nbr_of_shift = shift_nbr,
+                           alphabet = alphabet
                            )
         session = go_again()    
     else:
