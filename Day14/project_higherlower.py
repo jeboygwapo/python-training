@@ -21,7 +21,23 @@ data = [
         'country': 'United States'
     }
 ]
+def get_character():
+    character = data([randint(0,2)])
+    chr_name = character[0]
+    chr_desc = character[2]
+    chr_cntry = character[3]
+    
+    
+    
 
+def get_choice():
+    choice = input("Who has more followers? Type 'A' or 'B': ").lower()
+
+def main():
+    get_main_character()
+    get_choice()
+if __name__ == "__main__":
+    main()
 # Printed strings 
 Compare A: {name}, a {description}, from {country}.
 vs
