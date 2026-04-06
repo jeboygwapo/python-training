@@ -8,7 +8,6 @@ MoneyMachine = MoneyMachine()
 
 def main():
     is_on = True
-
     while is_on:
         choice = input(f"What would you like? ({Menu.get_items()}): ")
         if choice == "off":
@@ -22,11 +21,5 @@ def main():
                 if CoffeeMaker.is_resource_sufficient(drink):
                     if MoneyMachine.make_payment(drink.cost):
                         CoffeeMaker.make_coffee(drink)
-
-
-
-
-
-
 if __name__ == "__main__":
     main()
