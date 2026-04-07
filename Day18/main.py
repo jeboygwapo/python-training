@@ -34,14 +34,14 @@ def random_color():
 #     karlu.pencolor(random_color())
 
 # Random walk
-# directions = [0, 90, 180, 270]
-# karlu.pensize(10)
-# # Speed 1-10, where 10 is the fastest
-# karlu.speed(10)
-# while True:
-#     karlu.pencolor(random_color())
-#     karlu.setheading(choice(directions))
-#     karlu.forward(20)
+directions = [0, 90, 180, 270]
+karlu.pensize(10)
+# Speed 1-10, where 10 is the fastest
+karlu.speed(10)
+while True:
+    karlu.pencolor(random_color())
+    karlu.setheading(choice(directions))
+    karlu.forward(20)
 
 # Spirograph my answer
 # space = 5
@@ -53,12 +53,12 @@ def random_color():
 #     karlu.right(space+degrees)
 
 # Spirograph answer
-def draw_spirograph(size_of_gap):
-    karlu.speed("fastest")
-    for _ in range (int(360 / size_of_gap)):
-        karlu.color(random_color())
-        karlu.circle(100)
-        karlu.setheading(karlu.heading() + size_of_gap)
-draw_spirograph(5)
+# def draw_spirograph(size_of_gap):
+#     karlu.speed("fastest")
+#     for _ in range (int(360 / size_of_gap)):
+#         karlu.color(random_color())
+#         karlu.circle(100)
+#         karlu.setheading(karlu.heading() + size_of_gap)
+# draw_spirograph(5)
 
 screen.exitonclick()
